@@ -1,0 +1,11 @@
+.error {
+  border-radius: var(--round-border);
+  border: 2px solid var(--error-border-color);
+  background-color: var(--error-bg-color);
+  width: calc(100% - 30px);
+  padding: 0.2rem 0.4rem;
+}
+
+.message {
+  overflow-wrap: break-word;
+}
