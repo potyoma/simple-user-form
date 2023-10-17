@@ -7,8 +7,12 @@ export default defineConfig(({ mode }) => ({
   server: {
     proxy: {
       // TODO: Add production url
-      "/api":
-        mode === "development" ? "http://localhost:3000/api" : "production", // the address that u serve in the backend
+      "/api/": {
+        target: mode === "development" && "http://localhost:3000",
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
     },
   },
 }));
