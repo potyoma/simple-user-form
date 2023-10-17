@@ -8,7 +8,10 @@ export default defineConfig(({ mode }) => ({
     proxy: {
       // TODO: Add production url
       "/api/": {
-        target: mode === "development" && "http://localhost:3000",
+        target:
+          mode === "development"
+            ? "http://localhost:3000"
+            : "https://simple-user-form-production.up.railway.app",
         changeOrigin: true,
         secure: false,
         ws: true,
